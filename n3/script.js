@@ -32,4 +32,28 @@
 //     }
 // }
 
+// N.3 
 
+let numbers = [];
+
+function capturarNumeros(){
+    while (true) {
+        let input = prompt('ingreasa un numero del 1 en adelante (o ingresa el numero 0 para terminar)');
+
+        let number = Number(input);
+        
+        if (number === 0){
+            break;
+        }
+
+        if(!isNaN(number)){
+            numbers.push(number)
+        } else {
+            console.log("ingresa un numro valido")
+        }
+
+    }
+    console.log(`los numeros capturados son ${numbers}`)
+}
+
+capturarNumeros()
