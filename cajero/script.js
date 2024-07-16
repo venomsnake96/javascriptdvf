@@ -28,6 +28,7 @@ function login() {
     let enteredPassword = passwordInput.value;
 
     if(selectAccountIndex === ""){
+        loginError.style.color = 'red'
         loginError.textContent = "Por favor, selecciona una cuenta";
         return;
     }
@@ -38,8 +39,9 @@ function login() {
         currentAcount = selectAccount;
         document.getElementById("login-screen").style.display = "none"
         document.getElementById("atm-screen").style.display = "block"
-        document.querySelector("user-name").textContent = currentAcount.nombre
+        document.querySelector("#user-name").textContent = currentAcount.nombre
     }else {
+        loginError.style.color = 'red'
         loginError.textContent = "Contraseña incorrecta. Intentalo nuevamente"
     }
 
@@ -75,23 +77,28 @@ function confirmTransaction(type) {
     let atmMessage = document.getElementById("atm-message");
 
     if(isNaN(amount) || amount <= 0){
+        atmMessage.style.color = 'red'
         atmMessage.textContent = "Por favor, ingresa un monto valido"
         return;
     }
 
     if(type === "deposit"){
         if(currentAcount.saldo + amount > 990){
+            atmMessage.style.color = 'red'
             atmMessage.textContent = "No puedes tener mas de $990 en tu cuenta"
             return;
         }
         currentAcount.saldo += amount;
+          atmMessage.style.color = ' #15b300'
         atmMessage.textContent = `Has depositado $${amount}. Nuevo saldo $${currentAcount.saldo}`
     }else if (type === "withdraw") {
         if (currentAcount.saldo - amount < 10){
+            atmMessage.style.color = 'red'
             atmMessage.textContent = "No puedes tener menos de $10 en tu cuenta"
             return;
         }
         currentAcount.saldo -= amount;
+        atmMessage.style.color = ' #15b300'
         atmMessage.textContent = `Has retirado $${amount}. Nuevo saldo $${currentAcount.saldo}`
     }
     document.getElementById("amout").value = ""
@@ -113,11 +120,13 @@ function register() {
     let registerError = document.getElementById("register-error")
 
     if(newUser === "" || newPassword === ""){
+        registerError.style.color = 'red'
         registerError.textContent = "Por favor, completa todos los campos";
         return;
     }
 
     if(cuentas.some(account => account.nombre === newUser)){
+        registerError.style.color = 'red'
         registerError.textContent = "Este usuario ya existe"
         return;
     }
@@ -127,6 +136,7 @@ function register() {
 
     localStorage.setItem('cuentas', JSON.stringify(cuentas))
     updateAccountSelect()
+    registerError.style.color = '#15b300'
     registerError.textContent = "Cuenta registrada exitosamente.";
     document.getElementById("new-user").value = "";
     document.getElementById("new-password")
