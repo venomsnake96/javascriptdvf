@@ -11,7 +11,7 @@
       <h1>Cajero Automático</h1>
       <section id="login-screen">
         <h2>Selecciona tu cuenta</h2>
-        <select id="acount-select">
+        <select id="account-select">
           <option value="" selected disabled>Selecciona una cuenta</option>
           <option value="0">Mali</option>
           <option value="1">Gera</option>
@@ -25,6 +25,7 @@
         />
         <br />
         <button onclick="login()">Ingresar</button>
+        <button onclick="toggleRegister()">Registrar nueva cuenta</button>
         <p id="login-error" class="error"></p>
       </section>
       <section id="atm-screen" style="display: none">
@@ -39,6 +40,15 @@
             <br>
             <button id="confirm-button" onclick="confirmTransaction()">Confirmar</button>
         </article>
+      </section>
+      <section id="register-screen" style="display: none;">
+        <h2>Registrar Nueva Cuenta</h2>
+        <input type="text" id="new-user" placeholder="Nombre">
+        <br>
+        <input type="password" id="new-password" placeholder="Contraseña">
+        <br>
+        <button onclick="register()">Registrar</button>
+        <p id="register-error" class="error"></p>
       </section>
     </main>
     <script src="./script.js"></script>
