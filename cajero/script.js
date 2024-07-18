@@ -101,6 +101,7 @@ function confirmTransaction(type) {
         atmMessage.style.color = ' #15b300'
         atmMessage.textContent = `Has retirado $${amount}. Nuevo saldo $${currentAcount.saldo}`
     }
+    localStorage.setItem('cuentas', JSON.stringify(cuentas));
     document.getElementById("amout").value = ""
     document.getElementById("transaction-screen").style.display = "none"
 }
