@@ -8,6 +8,9 @@
   </head>
   <body>
     <main id="app">
+      <header class="menu">
+        <button class="toggle" onclick="toggleRegister()">Registrar nueva cuenta</button>
+      </header>
       <h1>Cajero Automático</h1>
       <section id="login-screen">
         <h2>Selecciona tu cuenta</h2>
@@ -25,7 +28,6 @@
         />
         <br />
         <button onclick="login()">Ingresar</button>
-        <button onclick="toggleRegister()">Registrar nueva cuenta</button>
         <p id="login-error" class="error"></p>
       </section>
       <section id="atm-screen" style="display: none">

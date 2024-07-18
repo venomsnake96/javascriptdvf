@@ -38,7 +38,7 @@ function login() {
     if(selectAccount.password === enteredPassword){
         currentAcount = selectAccount;
         document.getElementById("login-screen").style.display = "none"
-        document.getElementById("atm-screen").style.display = "block"
+        document.getElementById("atm-screen").style.display = "flex"
         document.querySelector("#user-name").textContent = currentAcount.nombre
     }else {
         loginError.style.color = 'red'
@@ -131,7 +131,7 @@ function register() {
         return;
     }
 
-    let newAccount = { nombre: newUser, saldo: 0, password: newPassword }
+    let newAccount = { nombre: newUser, saldo: "", password: newPassword }
     cuentas.push(newAccount)
 
     localStorage.setItem('cuentas', JSON.stringify(cuentas))
@@ -139,6 +139,6 @@ function register() {
     registerError.style.color = '#15b300'
     registerError.textContent = "Cuenta registrada exitosamente.";
     document.getElementById("new-user").value = "";
-    document.getElementById("new-password")
+    document.getElementById("new-password").value = "";
 }
 

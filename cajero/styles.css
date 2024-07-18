@@ -10,9 +10,9 @@ body {
 #app {
     margin: 50px auto;
     padding: 20px;
-    background-color: rgb(0, 0, 0);
-    box-shadow: 0 0 10px rgba(16, 94, 197, 0.651);
-    max-width: 300px;
+    background-color: rgba(0, 181, 253, 0.356);
+    box-shadow: 0 0 50px rgba(16, 94, 197, 0.979);
+    max-width: 500px;
     border-radius: 25px;
     color: white;
 }
@@ -20,13 +20,18 @@ body {
 #register-screen{
     margin: 50px auto;
     padding: 20px;
-    background-color: rgb(0, 0, 0);
-    box-shadow: 0 0 10px rgba(16, 197, 55, 0.651);
+    background-color: rgba(0, 181, 253, 0.356);
+    box-shadow: 0 0 50px rgba(16, 94, 197, 0.979);
     max-width: 300px;
     border-radius: 25px;
     color: white;
 }
-
+#atm-screen {
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 300px;
+}
 #atm-screen p{
     color: #15b300;
 }
@@ -39,26 +44,54 @@ button {
     font-family:"Chakra Petch", sans-serif;
     margin: 10px 0;
     padding: 10px 20px;
-    border: none;
-    background-color: #007bff;
+    border: 1px solid #007bff ;
+    background-color: unset;
     color: white;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background .2s ease-in-out;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
 }
 
 button:hover{
-    background: #15b300;
+    border:1px solid #15b300;
+    transform: scale(1.1);
 }
 
-button:focus{
-    background: #15b300;
-}
+
 
 input{
     font-family:"Chakra Petch", sans-serif;
+    background: unset;
+    color: whitesmoke;
+    border: 1px solid #007bff ;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
 select{
     font-family:"Chakra Petch", sans-serif;
+    background: unset;
+    color: white;
+    border: 1px solid #007bff  ;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+option{
+    background: black;
+}
+
+.toggle{
+    background: unset;
+    color: #007bff;
+    font-size: 15px;
+    transition: all .3s ease-in-out;
+    border: unset;
+
+    &:hover{
+        background: unset;
+        color: #15b300;
+        border: unset;
+    }
 }
